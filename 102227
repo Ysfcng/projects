@@ -1,0 +1,200 @@
+<html>
+<head>
+<style>
+body{
+height:100%;
+width:100%;
+align-items:end;
+align-content:end;
+}
+.container{
+width:100%;
+height:500px;
+position:relative;
+justify-content:center;
+}
+.light{
+position:absolute;
+width:40px;
+height:500px;
+border-top-left-radius:20px;
+border-top-right-radius:20px;
+background-color:rgb(50,255,50);
+animation :mymove 2s infinite;
+}
+@keyframes mymove {
+  0%   {height: 0px;top:0;}
+  100% {height: 500px;top:-500px;}
+}
+.lightsaber{
+width:40px;
+height:20rem;
+background-color:rgb(180,181,184);
+}
+.up{
+width:40px;
+height:40px;
+background-color:rgb(180,181,184);
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+margin-bottom:6px;
+}
+.up div{
+width:7px;
+border-radius:3px;
+height:2.5rem;
+background-color:#3c3630;
+}
+.down{
+width:100%;
+height:3rem;
+background-color:rgb(180,181,184);
+display:flex;
+flex-direction:column;
+justify-content:space-around;
+}
+.down div{
+width:100%;
+height:8px;
+background-color:#3c3630;
+border-radius:3px;
+}
+
+
+.main{
+height:120px;
+display:flex;
+}
+.main .section{
+display:flex;
+flex-direction:column;
+width:50%;
+height:100%;
+align-items:space-between;
+align-content:space-between;
+background-color:rgb(180,181,184)
+}
+.main .section:first-child{
+justify-items:center;
+justify-content:center;
+flex-direction:column;
+background-color:rgb(180,181,184);
+justify-content:space-around;
+align-items:center;
+
+}
+.main .section .line{
+border-radius:3px;
+width:18px;
+height:10px;
+background-color:#3c3630;
+}
+
+.main .window{
+width:100%;
+background-color:rgb(180,181,184);
+}
+.main .window span{
+width:7px ;
+border-radius:5px;
+height:48px;
+background-color:#3c3630;
+display:inline-block;
+
+}
+.main .button{
+margin-top:1px;
+margin-left:3px;
+border-radius:50% ;
+width:6px;
+height:6px;
+background-color:#feda15;
+display:flex;
+justify-content:center;
+align-content:center;
+align-items:center;
+padding:5px;
+}
+.main button{
+width:2px;
+padding:0px;
+height:2px;
+border-radius:50%;
+}
+.footer {
+margin-top:5px;
+height:7rem;
+width:100%;
+background-color:rgb(180,181,184);
+display:flex;
+justify-content:space-between;
+
+}
+.footer div{
+background-color:#3c3630;
+width:8px;
+height:100%;
+border-radius:10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<center>
+<div class="lightsaber">
+<div class="light"></div>
+<div class="header">
+<div class="up">
+<div class="first-line"></div>
+<div class="second-line"></div>
+<div class="third-line" ></div>
+<div class="forth-line"></div>
+</div>
+<div class="down">
+<div></div>
+<div></div>
+<div></div>
+</div>
+</div>
+
+<div class="main">
+<div class="section">
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+
+</div>
+<div class="section">
+<div class="window">
+<center>
+<span></span>
+<span></span><br/>
+<span></span>
+<span></span>
+</center>
+</div>
+<div class="button">
+<button></button>
+
+</div>
+</div>
+</div>
+
+<div class="footer">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+</div>
+</center>
+</div>
+
+</body>
+</html>
