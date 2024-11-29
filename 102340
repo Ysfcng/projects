@@ -1,0 +1,124 @@
+<html>
+<head>
+<meta name="viewport" 
+content="width=device-width,initial-scale=1.0">
+
+<style>
+*{
+padding:0px;
+margin:0px
+}
+body{
+display:flex;
+align-items:center;
+justify-content:center
+}
+button{
+display:flex;
+justify-content:center;
+align-content:center;
+height:30px;
+position:relative;
+width:100px;
+overflow:hidden;
+padding:0px
+}
+button div{
+width:20px;
+display:flex;
+flex-direction:column;
+
+}
+button div span{
+border-bottom:2px solid black
+}
+button div:nth-child(1){
+background:#ff2400;
+animation: firstUp  1s forwards;
+}
+
+@keyframes firstUp{
+100%{
+transform:translateY(-122px);
+
+}
+}
+
+button div:nth-child(2){
+background:#dc143c;
+animation:secondDown 1s forwards;
+transform:translateY(-76px);
+}
+/*ikinci divin animasyonu*/
+
+@keyframes secondDown{
+100%{
+transform:translateY(-14px);
+
+}
+}
+
+
+button div:nth-child(3){
+background:#ff6347;
+animation:thirdUp 1s forwards;
+}
+@keyframes thirdUp{
+100%{
+transform:translateY(-194px);
+
+}
+}
+button div:nth-child(4){
+background:#9b111e;
+transform:translateY(-179px);
+animation:forthDown 1s forwards
+}
+
+@keyframes forthDown{
+100%{
+transform:translateY(-14px);
+
+}
+}
+
+
+button div:nth-child(5){
+background:#d2042d;
+animation:fifthUp 1s forwards
+}
+@keyframes fifthUp{
+100%{
+transform:translateY(-230px);
+}
+}
+
+</style>
+</head>
+<body>
+<button>
+</button>
+<script>
+let letters={
+0:"abcdefghi",1:"abcdef",2:"abcdefghijklm",3:"abcdefghijklm",4:"abcdefhijklmnop"
+}
+for(let i=0;i<5;i++){
+let div=document.createElement("div")
+ for(let j=0;j<letters[i].length;j++){
+  let spa = document.createElement("span")
+let text=""
+if(i%2==0)
+   text=document.  createTextNode(letters[i][j])
+else{
+text=document.  createTextNode(letters[i][letters[i].length-j-1])
+}
+  spa.appendChild(text)
+  div.appendChild(spa)
+ }
+document.querySelector("button").
+appendChild(div)
+}
+</script>
+
+</body>
+</html>
