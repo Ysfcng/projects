@@ -1,0 +1,192 @@
+<html>
+<head>
+<style>
+@keyframes look{
+100%{
+transform:translateY(9rem)
+}
+}
+.container{
+width:100%;
+align-items:center;
+display:flex;
+flex-direction:column;
+}
+.cat{
+transform:translateY(15.2rem);
+margin:30px;
+position:relative;
+z-index:2;
+width:8rem;
+justify-content:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+animation:look 2s forwards;
+}
+.ears{
+width:8rem;
+position:absolute;
+top:-15;
+left:-0px;
+}
+.ear{
+position:relative;
+width:0;
+height:0;
+border-left:20px solid transparent;
+border-bottom:60px solid #f26b0f;
+}
+.ear:after{
+content:"";
+width:0;
+height:0;
+border-right:20px solid transparent;
+border-bottom:60px solid #f26b0f;
+position:absolute;
+top:-0px;
+left:5.50rem;
+}
+.face{
+width:8rem;
+height:6rem;
+border-radius:50%;
+background:orange;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+z-index:1;
+position:relative;
+}
+.face > div{
+display:flex;
+justify-content:center;
+gap:30px
+}
+
+.eye {
+    width: 15px;
+    height: 15px;
+border-radius:50%;
+    position: relative;
+    background: black;
+display:inline-block;
+
+}
+.nose{
+height:0;
+border-left:10px solid transparent;
+border-right:10px solid transparent;
+border-top:10px  solid black;
+margin-top:10px
+}
+span{
+position:absolute;
+top:40px;
+font-size:30px;
+}
+.left-whisker{
+left:30px;
+}.right-whisker{
+left:80px;
+}
+.line{
+margin-left:1px;
+width:2px;
+height:10px;
+background:black;
+position:relative;
+z-index:2
+}
+.line:before{
+content:"";
+width:2px;
+height:10px;
+top:10px;
+left:-5px;
+background:red;
+position:absolute;
+transform:rotate(45deg);
+z-index:1
+}
+.line:after{
+content:"";
+width:2px;
+height:10px;
+top:10px;
+left:5px;
+background:red;
+position:absolute;
+transform:rotate(-45deg);
+z-index:1
+}
+.body{
+width:70px;
+height:100px;
+background:black;
+transform:translateY(-10px);
+position:relative;
+z-index:-q;
+}
+.body:before{
+content:"";
+width: 0;
+  height: 0;
+  border-bottom: 100px solid orange;
+  border-left: 40px solid transparent;
+position:absolute;
+top:0px;
+left:-39px;
+}.body:after{
+content:"";
+width: 0;
+  height: 0;
+position:absolute;
+top:0px;
+right:-39px;
+  border-right: 40px solid transparent;
+  border-bottom: 100px solid orange;
+}
+
+.box{
+width:12rem;
+height:13rem;
+background:brown;
+justify-content:center;
+align-items:center;
+display:flex;
+font-family:code;
+font-size:2rem;
+position:relative;
+z-index:3;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="container">
+<div class="cat">
+<div class="ears"><div class="ear"></div>
+</div>
+<div class="face">
+<div>
+<div class="eye"></div>
+<div class="eye"></div>
+</div>
+<span class="left-whisker">></span>
+<div class="nose"></div>
+<span class="right-whisker"><</span>
+<div class="line"></div>
+</div>
+<div class="body"></div>
+</div>
+<div class="box"><div>Box</div></div>
+</div>
+<body>
+
+</html>
