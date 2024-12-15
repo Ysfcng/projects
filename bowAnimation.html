@@ -1,0 +1,139 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+@keyframes left{
+50%{
+height:70px;
+transform:rotate(45deg);
+transform-origin:top  left
+}
+}
+@keyframes right{
+50%{
+transform:rotate(-45deg);
+transform-origin:bottom left;
+height:70px;
+top:50px;
+}
+}
+@keyframes mid{
+51%{
+height:20px;
+left:-50px;
+top:50px;
+}
+90%{
+left:0px;
+height:0px!important;
+}
+}
+@keyframes arrow{
+100%{
+left:570px;
+}
+
+}
+
+
+body{
+width:100%;
+height:100vh;
+overflow:hidden;
+display:flex;
+align-items:center;
+}
+.root{
+border-right:12px solid red;
+width:120px;
+height:120px;
+border-radius:50%;
+position:relative;
+}
+.rope{
+position:absolute;
+width:2px;
+height;120px;
+right:49px;
+}
+
+.rope .up,.rope .down{
+width:2px;
+height:60px;
+background:green;
+position:absolute
+}
+.rope .up{
+animation:left 1s forwards;
+top:0;
+}
+.rope .down{
+background:green;
+animation :right 1s forwards;
+top:60px;
+}
+.rope .middle{
+width:2px;
+height:0px;
+background:green;
+position:absolute;
+top:60px;
+left: 0px;
+animation:mid 1s forwards;
+}
+.arrow{
+width:120px;
+height:10px;
+background:red;
+position:absolute;
+left:0;
+top:0;
+animation :arrow 1.49s forwards;
+animation-delay:0.85s;
+}
+.arrow::after {
+content:"";
+display:block;
+position :relative;
+top:0px;
+left:120px;
+border:5px solid transparent;
+border-left:5px solid black;
+}
+.target{
+width:25px;
+height:50px;
+background:black;
+position:relative;
+margin-left:auto;
+margin-right:10px;
+}
+.target:before{
+width:10px;
+height:30px;
+background:red;
+content:"";
+position:absolute;
+top:50px;
+left:7px;
+}
+</style>
+</head>
+<body>
+
+<div class="root">
+<div class="rope">
+<div class="up"></div>
+<div class="arrow-way">
+<div class="middle">
+<div class="arrow"></div>
+</div>
+</div>
+<div class="down"></div>
+</div>
+</div>
+
+
+<div class="target"></div>
+</body>
+</html>
