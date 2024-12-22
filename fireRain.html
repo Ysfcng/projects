@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+@keyframes drop{
+0%{
+top:-50px;
+}
+100%{
+top:100vh;
+}
+}
+@keyframes upper{
+100%{
+top:-20px;
+background:white;
+}
+}	
+body{
+width:100%;
+height:100vh;
+overflow:hidden;
+background:#222;
+}
+.fire-drop{
+position:absolute;
+top:-50px;
+animation:drop 2s linear forwards;
+}
+.up{
+position:absolute;
+display:flex;
+justify-content:center;
+padding-left:3px;
+}
+.up div{
+width:6px;
+height:6px;
+background:black;
+animation:upper 1s infinite;
+position:relative;
+top:0;
+}
+.up div:nth-child(even){
+animation-delay:0.5s;
+margin-right:1px;
+margin-left:1px;
+}
+.fire{
+border-radius:50%;
+width:20px;
+height:20px;
+background:yellow;
+border:3px solid red;
+}
+</style>
+</head>
+<body>
+<template  id="fireTemp">
+	<div class="fire-drop">
+		<div class="up">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="fire"></div>
+	</div>
+</template>
+<script>
+ setInterval(addFireDrop, 500);
+
+let temp=document.getElementById("fireTemp")
+
+function createFireDrop(){
+let clone=temp.content.cloneNode(true)
+let fire=clone.querySelector(".fire-drop")
+
+let left=Math.floor(Math.random()*(window.innerWidth-50))+"px"
+fire.style.left=left
+fire.addEventListener("animationend",()=>{
+fire.remove()
+})
+
+document.body.append(fire)
+}
+
+function addFireDrop(){
+let fireNumber=Math.floor(Math.random()*6)+1
+for(let i=0;i<fireNumber;i++){
+
+setTimeout(createFireDrop,i*100)
+}
+}
+
+addFireDrop()
+</script>
+</body>
+</html>
+
